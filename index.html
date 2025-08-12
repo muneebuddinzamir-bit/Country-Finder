@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Country Finder — Premium UI</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Main stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app-bg">
+    <div class="center-wrap">
+
+      <!-- Card -->
+      <header class="top-card">
+        <div class="title">
+          <h1>Country Finder</h1>
+          <p class="sub">Fast • Clean • Responsive</p>
+        </div>
+
+        <!-- Search -->
+        <div class="search-row">
+          <label class="search-input">
+            <svg class="icon-search" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
+              <path fill="currentColor" d="M15.5 14h-.79l-.28-.27A6.5 6.5 0 1 0 14 15.5l.27.28v.79L20 21.5 21.5 20l-6-6zM6.5 11A4.5 4.5 0 1 1 11 15.5 4.5 4.5 0 0 1 6.5 11z"/>
+            </svg>
+            <input id="countryInput" type="text" placeholder="Type country (e.g. Pakistan)" autocomplete="off"/>
+          </label>
+
+          <button id="searchBtn" class="btn-primary">Search</button>
+        </div>
+      </header>
+
+      <!-- Two-column layout for results + extra panel -->
+      <main class="main-grid">
+        <!-- Left: Results card (matches your JS IDs) -->
+        <section class="results-panel">
+          <div class="loading" id="loading">
+            <div class="spinner" aria-hidden="true"></div>
+            <div class="loading-text">Fetching country data...</div>
+          </div>
+
+          <div class="error" id="errorMessage"></div>
+
+          <div class="results" id="resultsContainer" aria-live="polite">
+            <div class="country-head">
+              <img id="countryFlag" class="flag" src="" alt="Country Flag" />
+              <div class="country-title">
+                <h2 id="countryName">—</h2>
+                <div class="country-sub" id="countryCode">Code: —</div>
+              </div>
+            </div>
+
+            <div class="info-grid">
+              <div class="info-card">
+                <div class="label">Capital</div>
+                <div id="capitalCity" class="value">—</div>
+              </div>
+
+              <div class="info-card">
+                <div class="label">Currency</div>
+                <div id="currency" class="value">—</div>
+              </div>
+
+              <div class="info-card">
+                <div class="label">Currency Code</div>
+                <div id="currencyCode" class="value">—</div>
+              </div>
+
+              <div class="info-card">
+                <div class="label">Phone Code</div>
+                <div id="phoneCode" class="value">—</div>
+              </div>
+
+              <div class="info-card wide">
+                <div class="label">Continent</div>
+                <div id="continent" class="value">—</div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Right: Decorative / extra info panel -->
+        <aside class="side-panel">
+          <div class="panel-card">
+            <h3>Tips</h3>
+            <ul class="tips">
+              <li>Use full country name for exact matches.</li>
+              <li>Try “United States” instead of “US”.</li>
+              <li>Autocomplete coming soon — type partially and press enter.</li>
+            </ul>
+          </div>
+
+          <div class="panel-card small">
+            <h4>Want more?</h4>
+            <p class="muted">I can add suggestions, fuzzy matching and a map popup — say the word.</p>
+          </div>
+        </aside>
+      </main>
+
+      <footer class="footer">
+        <small>Made with ♥ — Country Finder</small>
+      </footer>
+
+    </div>
+  </div>
+
+  <!-- Your existing JS (leave as-is) -->
+  <script src="script.js"></script>
+</body>
+</html>
